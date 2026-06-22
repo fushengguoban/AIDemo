@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Connection Lines -->
+    <path
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M36,36 L54,54 M72,36 L54,54 M36,72 L54,54 M72,72 L54,54" />
+
+    <!-- Central Node -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M54,46 A8,8 0 1,1 54,62 A8,8 0 1,1 54,46" />
+
+    <!-- Satellite Nodes -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M36,31 A5,5 0 1,1 36,41 A5,5 0 1,1 36,31
+                  M72,31 A5,5 0 1,1 72,41 A5,5 0 1,1 72,31
+                  M36,67 A5,5 0 1,1 36,77 A5,5 0 1,1 36,67
+                  M72,67 A5,5 0 1,1 72,77 A5,5 0 1,1 72,67" />
+</vector>
