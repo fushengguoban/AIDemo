@@ -11,7 +11,8 @@ import java.util.concurrent.TimeUnit
 
 object NetworkModule {
 
-    private const val BASE_URL = "https://api.aidemo.com/"
+    // 基础域名，Retrofit 要求必须以 "/" 结尾
+    private const val BASE_URL = "https://smartboard-dh.jintdev.com/"
 
     private val headerInterceptor: Interceptor by lazy {
         Interceptor { chain ->
@@ -55,6 +56,21 @@ object NetworkModule {
             .build()
     }
 
+    /**
+     * 创建 API Service 实例的封装方法
+     * 示例: val api = NetworkModule.createService(LoginApiService::class.java)
+     */
+    fun <T> createService(serviceClass: Class<T>): T {
+        return retrofit.create(serviceClass)
+    }
+
+    /**
+     * 内联泛型方法，调用更简洁
+     * 示例: val api = NetworkModule.createService<LoginApiService>()
+     */
+    inline fun <reified T> createService(): T {
+        return createService(T::class.java)
+    }
 
 }
 

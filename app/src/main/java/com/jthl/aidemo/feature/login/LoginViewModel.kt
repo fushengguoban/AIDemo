@@ -1,7 +1,6 @@
 package com.jthl.aidemo.feature.login
 
-import com.jthl.aidemo.feature.login.LoginRepository
-import com.jthl.aidemo.feature.login.RealLoginRepository
+import com.jthl.base.network.api.user.UserRepository
 import com.jthl.base.network.launchRequest
 import com.jthl.base.base.BaseViewModel
 
@@ -11,7 +10,7 @@ import com.jthl.base.base.BaseViewModel
  * 2. 移除了 viewModelScope 的手动启动。
  */
 class LoginViewModel(
-    private val repository: LoginRepository = RealLoginRepository()
+    private val repository: UserRepository = UserRepository()
 ) : BaseViewModel<LoginState, LoginIntent, LoginEffect>(LoginState()) {
 
     override fun onIntent(intent: LoginIntent) {
